@@ -1,5 +1,7 @@
 ![img.shields.io](https://img.shields.io/badge/GITHUB-ACTION-blue?style=for-the-badge&logo=github)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![shell-script](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
+
 
 # NPM TEST 
 
