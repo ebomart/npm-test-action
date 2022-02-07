@@ -16,9 +16,6 @@ name: "npm test"
       using: "composite"
       steps:
 
-      # Checkout the Repo
-      - uses: actions/checkout@v2
-
       # Install Node 12
       - name: Setup Node
         uses: actions/setup-node@v1
