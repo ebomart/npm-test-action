@@ -1,3 +1,4 @@
+
 name: "npm test"
 description: "Npm test"    
 inputs:
@@ -10,15 +11,16 @@ inputs:
     description: "Put test ENV name"
     required: true
 
-
 runs:
   using: "composite"
   steps:
-  
-    uses: actions/setup-node@v1
-    with:
-      node-version: 17
 
-    shell: bash
-    run: npm install && npm run test:${{ inputs.env_name }} ${{ inputs.microservice_name }}
+    - id: install_node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 17
+      
+    - id: npm_test
+      shell: bash
+      run: npm install && npm run test:${{ inputs.env_name }} ${{ inputs.microservice_name }}
 
