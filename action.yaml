@@ -1,6 +1,5 @@
 name: "npm test"
-    description: "Npm test"
-    
+    description: "Npm test"    
     inputs:
 
       Microservice_name:
@@ -16,16 +15,12 @@ name: "npm test"
       using: "composite"
       steps:
 
-      # Install Node 12
-      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 17
 
-      # Install dependencies
       - run: npm install
 
-      # Run tests
       - name: test
         run: npm run test:${{ inputs.ENV_Name }} ${{ inputs.Microservice_name }}
 
