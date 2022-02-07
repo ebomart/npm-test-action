@@ -1,23 +1,24 @@
 name: "npm test"
-    description: "Npm test"    
-    inputs:
+description: "Npm test"    
+inputs:
 
-      Microservice_name:
-        description: "Put microservice which you want test"
-        required: true
+  microservice_name:
+    description: "Put microservice which you want test"
+    required: true
 
-      ENV_Name:
-        description: "Put test ENV name"
-        required: true
+  env_name:
+    description: "Put test ENV name"
+    required: true
 
 
-    runs:
-      using: "composite"
-      steps:
+runs:
+  using: "composite"
+  steps:
+  
+    uses: actions/setup-node@v1
+    with:
+      node-version: 17
 
-        uses: actions/setup-node@v1
-        with:
-          node-version: 17
-
-        - run: npm install && npm run test:${{ inputs.ENV_Name }} ${{ inputs.Microservice_name }}
+    shell: bash
+    run: npm install && npm run test:${{ inputs.env_name }} ${{ inputs.microservice_name }}
 
