@@ -19,5 +19,5 @@ name: "npm test"
         with:
           node-version: 17
 
-      - run: npm install && npm run test:${{ inputs.ENV_Name }} ${{ inputs.Microservice_name }}
+        - run: npm install && npm run test:${{ inputs.ENV_Name }} ${{ inputs.Microservice_name }}
 
